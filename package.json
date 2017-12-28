@@ -15,7 +15,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "prepublish": "babel src --out-dir lib"
+    "prepublish": "babel src --out-dir lib --ignore spec.js"
   },
   "dependencies": {
     "autolinker": "^1.6.0"
@@ -25,6 +25,7 @@
     "babel-core": "^6.26.0",
     "babel-env": "^2.4.1",
     "husky": "^0.14.3",
+    "jest": "^22.0.4",
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.2"
   },
