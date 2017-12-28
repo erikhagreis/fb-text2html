@@ -1,5 +1,5 @@
 {
-  "name": "fb-message2html",
+  "name": "fb-text2html",
   "version": "0.0.1",
   "description":
     "utility that transforms Facebook graph data: (message, message_tags) => html",
