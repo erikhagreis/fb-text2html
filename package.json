@@ -1,8 +1,16 @@
 {
   "name": "fb-text2html",
   "version": "0.1.0",
-  "description": "utility that transforms Facebook graph data: (message, message_tags) => html",
+  "description": "simple utility that transforms Facebook graph data: (text, tags) => html",
   "author": "Erik Hagreis",
+  "keywords": [
+    "facebook",
+    "graph",
+    "util",
+    "tags",
+    "html"
+  ],
+  "repository": "https://github.com/erikhagreis/fb-text2html",
   "license": "MIT",
   "main": "./lib/index.js",
   "scripts": {
