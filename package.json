@@ -1,8 +1,27 @@
 {
   "name": "fb-message2html",
   "version": "0.0.1",
-  "description": "utility that transforms Facebook graph data: (message, message_tags) => html",
-  "main": "./lib/index.js",
+  "description":
+    "utility that transforms Facebook graph data: (message, message_tags) => html",
   "author": "Erik Hagreis",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "create-version": "./scripts/create-version.sh",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "autolinker": "^1.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-env": "^2.4.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
+  }
 }
