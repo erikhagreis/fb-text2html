@@ -1,20 +1,20 @@
 import AutoLinker from 'autolinker';
 import { defaults, forEachRight, toArray } from 'lodash';
 
-export function messageToHtml(message, tags = [], options = {}) {
+export default function text2html(message, tags = [], options = {}) {
   const opts = defaults({}, options, {
-    replaceTags: true,
-    replaceLinks: true,
+    addTags: true,
+    autolinker: true,
     addParagraphs: true
   });
 
-  if (opts.replaceTags) {
+  if (opts.addTags) {
     forEachRight(tags, tag => {
       message = addTag(message, tag);
     });
   }
 
-  if (opts.replaceLinks) {
+  if (opts.autolinker) {
     message = getAutoLinker().link(message);
   }
 
@@ -29,13 +29,13 @@ export function messageToHtml(message, tags = [], options = {}) {
   return message;
 }
 
-export function addTag(message, tag) {
+function addTag(text, tag) {
   const { id, name, offset, length } = tag;
-  const link = `<a href="http://www.facebook.com/${id}">${name}</a>`;
+  const link = `<a href="https://www.facebook.com/${id}">${name}</a>`;
 
   // converting to array with Lodash 'toArray' solves an issue where taking string
-  // lengths in Javascript fails when these strings contain emoji's. For example,
-  // did you know...
+  // lengths in Javascript yields unexpected results when these strings contain
+  // emoji's. For example, did you know:
   //
   // '💩'.length === 2
   // '👩‍❤️‍💋‍👩'.length === 11
@@ -46,7 +46,7 @@ export function addTag(message, tag) {
   // how lodash solved this:
   // https://github.com/lodash/lodash/blob/master/.internal/unicodeToArray.js
   //
-  const chars = toArray(message);
+  const chars = toArray(text);
   return [
     ...chars.slice(0, offset),
     link,
@@ -58,7 +58,7 @@ let autoLinker;
 function getAutoLinker() {
   autoLinker =
     autoLinker ||
-    new Autolinker({
+    new AutoLinker({
       urls: {
         schemeMatches: true,
         wwwMatches: true,
@@ -66,8 +66,8 @@ function getAutoLinker() {
       },
       email: true,
       phone: false,
-      twitter: true,
       hashtag: 'facebook',
+      mention: false,
       newWindow: false
     });
 
