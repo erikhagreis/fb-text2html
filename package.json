@@ -7,8 +7,7 @@
     "facebook",
     "graph",
     "util",
-    "tags",
-    "html"
+    "text2html"
   ],
   "repository": "https://github.com/erikhagreis/fb-text2html",
   "license": "MIT",

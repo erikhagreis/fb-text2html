@@ -12,48 +12,45 @@ describe('fb-text2html', () => {
       length: 12
     }
   ];
+  let output;
 
   describe('running with default options (all transformations)', () => {
     it('outputs the expected html-formatted string', () => {
-      const html = fbText2html(text, tags);
-
-      expect(html).toMatchSnapshot();
+      output = fbText2html(text, tags);
+      expect(output).toMatchSnapshot();
     });
   });
 
   describe('only adding tags', () => {
     it('outputs the expected html-formatted string', () => {
-      const html = fbText2html(text, tags, {
+      output = fbText2html(text, tags, {
         addTags: true,
         autolinker: false,
         addParagraphs: false
       });
-
-      expect(html).toMatchSnapshot();
+      expect(output).toMatchSnapshot();
     });
   });
 
   describe('only autolinking', () => {
     it('outputs the expected html-formatted string', () => {
-      const html = fbText2html(text, tags, {
+      output = fbText2html(text, tags, {
         addTags: false,
         autolinker: true,
         addParagraphs: false
       });
-
-      expect(html).toMatchSnapshot();
+      expect(output).toMatchSnapshot();
     });
   });
 
   describe('only adding paragraphs', () => {
     it('outputs the expected html-formatted string', () => {
-      const html = fbText2html(text, tags, {
+      output = fbText2html(text, tags, {
         addTags: false,
         autolinker: false,
         addParagraphs: true
       });
-
-      expect(html).toMatchSnapshot();
+      expect(output).toMatchSnapshot();
     });
   });
 });
