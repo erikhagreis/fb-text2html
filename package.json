@@ -1,0 +1,8 @@
+{
+  "name": "fb-message2html",
+  "version": "0.0.1",
+  "description": "utility that transforms Facebook graph data: (message, message_tags) => html",
+  "main": "./lib/index.js",
+  "author": "Erik Hagreis",
+  "license": "MIT"
+}
