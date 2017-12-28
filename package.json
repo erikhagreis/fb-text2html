@@ -14,8 +14,8 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "scripts": {
-    "create-version": "./scripts/create-version.sh",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepublish": "babel src --out-dir lib"
   },
   "dependencies": {
     "autolinker": "^1.6.0"
