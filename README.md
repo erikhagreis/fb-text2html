@@ -19,7 +19,7 @@ Use the package manager of your choosing:
 npm install fb-text2html
 
 # yarn
-yarn install fb-text2html
+yarn add fb-text2html
 ```
 
 ## Usage
