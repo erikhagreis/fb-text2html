@@ -17,7 +17,7 @@ git add ./lib
 git commit -m "chore(lib): precompile to ES5"
 
 # Create version with Yarn
-yarn version $1 -m "chore(version): create tag v%s"
+yarn version --new-version $1
 
 # Push!
 git push --follow-tags
