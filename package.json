@@ -17,7 +17,8 @@
     "prepublish": "babel src --out-dir lib --ignore spec.js"
   },
   "dependencies": {
-    "autolinker": "^1.6.0"
+    "autolinker": "^1.6.0",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
