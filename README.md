@@ -27,9 +27,9 @@ yarn add fb-text2html
 import fbText2html from 'fb-text2html';
 
 // multiline plain text in;
-const text = `hey! checkout this cool FB page 😋,
+const text = `hey! check out this cool FB page 😋,
 
-and also checkout this link: goo.gl/Q377nS
+and also don't miss out on this link: goo.gl/Q377nS
 bye! 😹`;
 
 // tags come in the following format:
@@ -38,7 +38,7 @@ const tags = [
     'id': '189217720153',
     'name': 'cool FB page',
     'type': 'page',
-    'offset': 19,
+    'offset': 20,
     'length': 12
   }
 ];
@@ -46,18 +46,25 @@ const tags = [
 // combine here...
 const html = fbText2html(text, tags);
 ```
-After running the `html` const will contain the following value:
+After running, the `html` const will contain the following value:
 
 ```html
 <!-- formatted for readability, actually a string with no extra whitespace -->
 <p>
-  hey! checkout this <a href="https://www.facebook.com/189217720153">cool FB page</a> 😋,
+  hey! check out this <a href="https://www.facebook.com/189217720153">cool FB page</a> 😋,
 </p>
 <p>
-  and also checkout this link: <a href="http://goo.gl/Q377nS">goo.gl/Q377nS</a>
+  and also don't miss out on this link: <a href="http://goo.gl/Q377nS">goo.gl/Q377nS</a>
   <br/>
   bye! 😹
 </p>
+```
+
+### Using CommonJS require
+Note above example uses ES Modules. When using CommonJS modules (ie in Node), you include the library as follows, with all else staying the same:
+
+```javascript
+const fbText2html = require("fb-text2html").default;
 ```
 
 ### Options
@@ -83,10 +90,10 @@ const options = {
 const html = fbText2html(text, tags, options);
 ```
 
-## 
-
 ## Acknowledgements
-This lib uses [AutoLinker](https://github.com/gregjacobs/Autolinker.js/). Good lib, made my life easy :+1:.
+This lib uses [AutoLinker](https://github.com/gregjacobs/Autolinker.js/). Good lib, made my life easy :+1:. 
+
+Also in there: Lodash, which turned out to be absolutely essential to work with unicode text which contains emoticons. Glad I did not have to figure out [this bit of code](https://github.com/lodash/lodash/blob/master/.internal/unicodeToArray.js) by myself :).
 
 ## License
 MIT, see [LICENSE](./LICENSE).

@@ -2,13 +2,13 @@ import fbText2html from 'fb-text2html';
 
 describe('fb-text2html', () => {
   const text =
-    'hey! checkout this cool FB page 😋,\n\nand also checkout this link: goo.gl/Q377nS\nbye! 😹';
+    "hey! check out this cool FB page 😋,\n\nand also don't miss out on this link: goo.gl/Q377nS\nbye! 😹";
   const tags = [
     {
       id: '189217720153',
       name: 'cool FB page',
       type: 'page',
-      offset: 19,
+      offset: 20,
       length: 12
     }
   ];

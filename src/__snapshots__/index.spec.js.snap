@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fb-text2html only adding paragraphs outputs the expected html-formatted string 1`] = `"<p>hey! checkout this cool FB page 😋,</p><p>and also checkout this link: goo.gl/Q377nS<br/>bye! 😹</p>"`;
+exports[`fb-text2html only adding paragraphs outputs the expected html-formatted string 1`] = `"<p>hey! check out this cool FB page 😋,</p><p>and also don't miss out on this link: goo.gl/Q377nS<br/>bye! 😹</p>"`;
 
 exports[`fb-text2html only adding tags outputs the expected html-formatted string 1`] = `
-"hey! checkout this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,
+"hey! check out this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,
 
-and also checkout this link: goo.gl/Q377nS
+and also don't miss out on this link: goo.gl/Q377nS
 bye! 😹"
 `;
 
 exports[`fb-text2html only autolinking outputs the expected html-formatted string 1`] = `
-"hey! checkout this cool FB page 😋,
+"hey! check out this cool FB page 😋,
 
-and also checkout this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a>
+and also don't miss out on this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a>
 bye! 😹"
 `;
 
-exports[`fb-text2html running with default options (all transformations) outputs the expected html-formatted string 1`] = `"<p>hey! checkout this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,</p><p>and also checkout this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a><br/>bye! 😹</p>"`;
+exports[`fb-text2html running with default options (all transformations) outputs the expected html-formatted string 1`] = `"<p>hey! check out this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,</p><p>and also don't miss out on this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a><br/>bye! 😹</p>"`;
