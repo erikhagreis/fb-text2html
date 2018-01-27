@@ -1,6 +1,6 @@
 {
   "name": "fb-text2html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple utility that transforms Facebook graph data: (text, tags) => html",
   "author": "Erik Hagreis",
   "keywords": [
