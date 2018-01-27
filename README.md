@@ -22,6 +22,15 @@ npm install fb-text2html
 yarn add fb-text2html
 ```
 
+Or load directly into your browser:
+
+```html
+<script src="./dist/fbtext2html.min.js"></script>
+<script>
+  window.fbtext2html(message, message_tags, options);
+</script>
+```
+
 ## Usage
 ```javascript
 import fbText2html from 'fb-text2html';
