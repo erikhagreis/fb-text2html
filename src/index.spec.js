@@ -1,4 +1,4 @@
-import fbText2html from 'fb-text2html';
+import text2html from 'fb-text2html';
 
 describe('fb-text2html', () => {
   const text =
@@ -16,14 +16,14 @@ describe('fb-text2html', () => {
 
   describe('running with default options (all transformations)', () => {
     it('outputs the expected html-formatted string', () => {
-      output = fbText2html(text, tags);
+      output = text2html(text, tags);
       expect(output).toMatchSnapshot();
     });
   });
 
   describe('only adding tags', () => {
     it('outputs the expected html-formatted string', () => {
-      output = fbText2html(text, tags, {
+      output = text2html(text, tags, {
         addTags: true,
         autolinker: false,
         addParagraphs: false
@@ -34,7 +34,7 @@ describe('fb-text2html', () => {
 
   describe('only autolinking', () => {
     it('outputs the expected html-formatted string', () => {
-      output = fbText2html(text, tags, {
+      output = text2html(text, tags, {
         addTags: false,
         autolinker: true,
         addParagraphs: false
@@ -45,7 +45,7 @@ describe('fb-text2html', () => {
 
   describe('only adding paragraphs', () => {
     it('outputs the expected html-formatted string', () => {
-      output = fbText2html(text, tags, {
+      output = text2html(text, tags, {
         addTags: false,
         autolinker: false,
         addParagraphs: true

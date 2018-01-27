@@ -14,11 +14,16 @@
   "main": "./lib/index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "prepublish": "babel src --out-dir lib --ignore spec.js"
+    "build": "webpack",
+    "lib": "babel src --out-dir lib --ignore spec.js,umd.js",
+    "prepublish": "npm run build && npm run lib"
   },
   "dependencies": {
     "autolinker": "^1.6.0",
-    "lodash": "^4.17.4"
+    "babel-loader": "^7.1.2",
+    "babel-plugin-lodash": "^3.3.2",
+    "lodash": "^4.17.4",
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
