@@ -33,7 +33,7 @@ Or load directly into your browser:
 
 ## Usage
 ```javascript
-import fbText2html from 'fb-text2html';
+import { text2html } from 'fb-text2html';
 
 // multiline plain text in;
 const text = `hey! check out this cool FB page 😋,
@@ -53,7 +53,7 @@ const tags = [
 ];
 
 // combine here...
-const html = fbText2html(text, tags);
+const html = text2html(text, tags);
 ```
 After running, the `html` const will contain the following value:
 
@@ -73,7 +73,7 @@ After running, the `html` const will contain the following value:
 Note above example uses ES Modules. When using CommonJS modules (ie in Node), you include the library as follows, with all else staying the same:
 
 ```javascript
-const fbText2html = require("fb-text2html").default;
+const fbText2html = require("fb-text2html").text2html;
 ```
 
 ### Options

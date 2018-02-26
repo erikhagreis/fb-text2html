@@ -1,7 +1,7 @@
 import AutoLinker from 'autolinker';
 import { defaults, forEachRight, toArray } from 'lodash';
 
-export default function text2html(message, tags = [], options = {}) {
+export function text2html(message, tags = [], options = {}) {
   const opts = defaults({}, options, {
     addTags: true,
     autolinker: true,

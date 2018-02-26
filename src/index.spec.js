@@ -1,4 +1,4 @@
-import text2html from 'fb-text2html';
+import { text2html } from 'fb-text2html';
 
 describe('fb-text2html', () => {
   const text =
