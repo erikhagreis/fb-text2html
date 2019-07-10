@@ -16,22 +16,24 @@
     "precommit": "lint-staged",
     "build": "webpack",
     "lib": "babel src --out-dir lib --ignore spec.js,umd.js",
-    "prepublish": "npm run build && npm run lib"
+    "prepublish": "npm run build && npm run lib",
+    "test": "jest"
   },
   "dependencies": {
-    "autolinker": "^1.6.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-lodash": "^3.3.2",
-    "lodash": "^4.17.4",
-    "webpack": "^3.10.0"
+    "autolinker": "^1.8.3",
+    "lodash": "^4.17.14"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-env": "^2.4.1",
+    "@babel/cli": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-lodash": "^3.3.4",
     "husky": "^0.14.3",
-    "jest": "^22.0.4",
-    "lint-staged": "^6.0.0",
-    "prettier": "^1.9.2"
+    "jest": "^24.8.0",
+    "lint-staged": "^6.1.1",
+    "prettier": "^1.18.2",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

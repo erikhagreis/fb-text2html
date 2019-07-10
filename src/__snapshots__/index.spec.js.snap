@@ -1,19 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`fb-text2html only adding paragraphs outputs the expected html-formatted string 1`] = `"<p>hey! check out this cool FB page 😋,</p><p>and also don't miss out on this link: goo.gl/Q377nS<br/>bye! 😹</p>"`;
+exports[`sample 1 only adding paragraphs outputs the expected html-formatted string 1`] = `"<p>hey! check out this cool FB page 😋,</p><p>and also don't miss out on this link: goo.gl/Q377nS<br/>bye! 😹</p>"`;
 
-exports[`fb-text2html only adding tags outputs the expected html-formatted string 1`] = `
+exports[`sample 1 only adding tags outputs the expected html-formatted string 1`] = `
 "hey! check out this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,
 
 and also don't miss out on this link: goo.gl/Q377nS
 bye! 😹"
 `;
 
-exports[`fb-text2html only autolinking outputs the expected html-formatted string 1`] = `
+exports[`sample 1 only autolinking outputs the expected html-formatted string 1`] = `
 "hey! check out this cool FB page 😋,
 
 and also don't miss out on this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a>
 bye! 😹"
 `;
 
-exports[`fb-text2html running with default options (all transformations) outputs the expected html-formatted string 1`] = `"<p>hey! check out this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,</p><p>and also don't miss out on this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a><br/>bye! 😹</p>"`;
+exports[`sample 1 running with default options (all transformations) outputs the expected html-formatted string 1`] = `"<p>hey! check out this <a href=\\"https://www.facebook.com/189217720153\\">cool FB page</a> 😋,</p><p>and also don't miss out on this link: <a href=\\"http://goo.gl/Q377nS\\">goo.gl/Q377nS</a><br/>bye! 😹</p>"`;
+
+exports[`sample 2 only adding paragraphs outputs the expected html-formatted string 1`] = `"<p>We have an insanely nice & loyal fan who buys us a crate of the most exclusive beer in the world every now and then! 😱 thank you so much Harm Janssen! ❤️ we just played an instore show at MusicMachine Sittard and now we’re off to play Fiesta du Rock in Flemalle, Belgium! 🇧🇪🤟🏾🦅🍻</p>"`;
+
+exports[`sample 2 only adding tags outputs the expected html-formatted string 1`] = `"We have an insanely nice & loyal fan who buys us a crate of the most exclusive beer in the world every now and then! 😱 thank you so much <a href=\\"https://www.facebook.com/10157307567462822\\">Harm Janssen</a>! ❤️ we just played an instore show at <a href=\\"https://www.facebook.com/1649041608657713\\">MusicMachine Sittard</a> and now we’re off to play Fiesta du Rock in Flemalle, Belgium! 🇧🇪🤟🏾🦅🍻"`;
+
+exports[`sample 2 only autolinking outputs the expected html-formatted string 1`] = `"We have an insanely nice & loyal fan who buys us a crate of the most exclusive beer in the world every now and then! 😱 thank you so much Harm Janssen! ❤️ we just played an instore show at MusicMachine Sittard and now we’re off to play Fiesta du Rock in Flemalle, Belgium! 🇧🇪🤟🏾🦅🍻"`;
+
+exports[`sample 2 running with default options (all transformations) outputs the expected html-formatted string 1`] = `"<p>We have an insanely nice & loyal fan who buys us a crate of the most exclusive beer in the world every now and then! 😱 thank you so much <a href=\\"https://www.facebook.com/10157307567462822\\">Harm Janssen</a>! ❤️ we just played an instore show at <a href=\\"https://www.facebook.com/1649041608657713\\">MusicMachine Sittard</a> and now we’re off to play Fiesta du Rock in Flemalle, Belgium! 🇧🇪🤟🏾🦅🍻</p>"`;

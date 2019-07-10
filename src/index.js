@@ -1,7 +1,7 @@
 import AutoLinker from 'autolinker';
-import { defaults, forEachRight, toArray } from 'lodash';
+import { defaults, forEachRight, map } from 'lodash';
 
-export function text2html(message, tags = [], options = {}) {
+export const text2html = (message, tags = [], options = {}) => {
   const opts = defaults({}, options, {
     addTags: true,
     autolinker: true,
@@ -27,35 +27,22 @@ export function text2html(message, tags = [], options = {}) {
   }
 
   return message;
-}
+};
 
-function addTag(text, tag) {
+const addTag = (text, tag) => {
   const { id, name, offset, length } = tag;
   const link = `<a href="https://www.facebook.com/${id}">${name}</a>`;
 
-  // converting to array with Lodash 'toArray' solves an issue where taking string
-  // lengths in Javascript yields unexpected results when these strings contain
-  // emoji's. For example, did you know:
-  //
-  // '💩'.length === 2
-  // '👩‍❤️‍💋‍👩'.length === 11
-  //
-  // more about the issue:
-  // http://blog.jonnew.com/posts/poo-dot-length-equals-two
-  //
-  // how lodash solved this:
-  // https://github.com/lodash/lodash/blob/master/.internal/unicodeToArray.js
-  //
-  const chars = toArray(text);
+  const chars = getChars(text);
   return [
     ...chars.slice(0, offset),
     link,
     ...chars.slice(offset + length)
   ].join('');
-}
+};
 
 let autoLinker;
-function getAutoLinker() {
+const getAutoLinker = () => {
   autoLinker =
     autoLinker ||
     new AutoLinker({
@@ -72,4 +59,39 @@ function getAutoLinker() {
     });
 
   return autoLinker;
-}
+};
+
+/*
+  converting to array with Lodash 'toArray' solves an issue where taking string
+  lengths in Javascript yields unexpected results when these strings contain
+  emoji's. For example, did you know:
+
+  '💩'.length === 2
+  '👩‍❤️‍💋‍👩'.length === 11
+
+  more about the issue:
+  http://blog.jonnew.com/posts/poo-dot-length-equals-two
+
+  uses either Array.from if available, or a polyfill method as fallback
+*/
+const getChars = str => (Array.from ? Array.from(str) : arrayFrom(str));
+
+const arrayFrom = str =>
+  map(toCodePoints(str), codepoint => String.fromCodePoint(codepoint));
+
+const toCodePoints = str => {
+  const chars = [];
+  for (var i = 0; i < str.length; i++) {
+    var c1 = str.charCodeAt(i);
+    if (c1 >= 0xd800 && c1 < 0xdc00 && i + 1 < str.length) {
+      var c2 = str.charCodeAt(i + 1);
+      if (c2 >= 0xdc00 && c2 < 0xe000) {
+        chars.push(0x10000 + ((c1 - 0xd800) << 10) + (c2 - 0xdc00));
+        i++;
+        continue;
+      }
+    }
+    chars.push(c1);
+  }
+  return chars;
+};

@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   entry: './src/umd.js',
@@ -12,12 +11,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
-        use: 'babel-loader'
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       }
     ]
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin()
-  ]
+  mode: 'production',
 }

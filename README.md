@@ -100,9 +100,9 @@ const html = fbText2html(text, tags, options);
 ```
 
 ## Acknowledgements
-This lib uses [AutoLinker](https://github.com/gregjacobs/Autolinker.js/). Good lib, made my life easy :+1:. 
+This lib uses [AutoLinker](https://github.com/gregjacobs/Autolinker.js/). Good lib, made my life easy :+1:.
 
-Also in there: Lodash, which turned out to be absolutely essential to work with unicode text which contains emoticons. Glad I did not have to figure out [this bit of code](https://github.com/lodash/lodash/blob/master/.internal/unicodeToArray.js) by myself :).
+Uses `Array.from` to split the Facebook post body properly in separate unicode code points. If the function is not available, a fallback is used. The fallback was inspired by this [StackOverflow page](https://stackoverflow.com/questions/21397316/split-javascript-string-into-array-of-codepoints-taking-into-account-surrogat).
 
 ## License
 MIT, see [LICENSE](./LICENSE).
