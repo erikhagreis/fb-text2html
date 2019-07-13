@@ -1,5 +1,7 @@
 import AutoLinker from 'autolinker';
-import { defaults, forEachRight, map } from 'lodash';
+import defaults from 'lodash/defaults';
+import forEachRight from 'lodash/forEachRight';
+import map from 'lodash/map';
 
 export const text2html = (message, tags = [], options = {}) => {
   const opts = defaults({}, options, {
