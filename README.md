@@ -2,14 +2,10 @@
 
 Transform Facebook Graph data: `(text, tags) => html`.
 
-When querying the FB graph using the [Javascript SDK](https://developers.facebook.com/docs/javascript/reference/FB.api), it will return content as plain text - even if the original post included all sorts of links. Information about which links to other FB pages are in the post can be obtained though. URLs and newlines can be converted to markup as well.
+When querying the FB graph using the [Javascript SDK](https://developers.facebook.com/docs/javascript/reference/FB.api), it will return content as plain text (as the `message` property in a `Post` object) - even if the original post included all sorts of links. URLs in the text need to be transformed into HTML links and newlines characters into HTML breaks. Links to other pages can be obtained from the `message_tags` property (see the example of such an object below).
 
-This lib will do this for you:
-- add links for tags
-- add links for urls, emailadresses and hashtags in the text
-- change newlines into paragraphs and breaks
-
-In this context, tags are basically links to other Facebook pages. Information about which pieces of the text should link to which pages can be obtained separately from the FB API (ie: `message` = text; `message_tags` = tags). For an example of a tag list, [see the example under 'usage'](#usage).
+## Emoji's
+Some special care needs to be taken to split text by Unicode code points rather than simple characters. I liked the following introduction into the subject: http://blog.jonnew.com/posts/poo-dot-length-equals-two. Good thing is that `Array.from` provides an easy way to deal with this.
 
 ## Installing
 Use the package manager of your choosing:
