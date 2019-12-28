@@ -16,7 +16,7 @@
     "precommit": "lint-staged",
     "build": "webpack",
     "lib": "babel src --out-dir lib --ignore spec.js,umd.js",
-    "prepublish": "npm run build && npm run lib",
+    "version": "npm run build && npm run lib && git add . && git commit -m \"chore: new build\"",
     "test": "jest"
   },
   "dependencies": {
